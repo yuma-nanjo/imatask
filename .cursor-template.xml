@@ -1,0 +1,17 @@
+<TEMPLATE>
+  <INSTRUCTIONS>
+    使用する<CODEBASE>コードを参照し、高レベルの<TASK>を詳細なステップバイステップの指示に変換してください。各ステップは、AIコーディングエージェントが自律的に実行可能な具体的なファイル名とコードスニペットを含む必要があります。テスト作業は含めず、必ずビルドを実行してください。出力はマークダウン形式で記述してください。
+  </INSTRUCTIONS>
+  <TASK>
+    <!-- 各タスクの詳細は .cursor-tasks.md に記載されます。プロジェクトは imanoc株式会社のタスク管理アプリケーションです。 -->
+  </TASK>
+  <CURSOR_RULES>
+    <!-- .cursorrules の内容を参照してください -->
+  </CURSOR_RULES>
+  <CODEBASE>
+    <!-- 本プロジェクトは Next.js 15.2.4、Prisma、Lucia、shadcn/ui、Tailwind CSS、nodemailer（React Email）、Google Calendar API、AI API連携を使用 -->
+  </CODEBASE>
+  <INSTRUCTIONS>
+    使用する<CODEBASE>コードを参照し、高レベルの<TASK>を詳細なステップバイステップの指示に変換してください。各ステップは、AIコーディングエージェントが自律的に実行可能な具体的なファイル名とコードスニペットを含む必要があります。テスト作業は含めず、必ずビルドを実行してください。出力はマークダウン形式で記述してください。
+  </INSTRUCTIONS>
+</TEMPLATE>

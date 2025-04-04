@@ -1,0 +1,58 @@
+# .cursorrules
+
+## Components & Naming
+- 必要に応じて `"use client"` を使用する関数コンポーネントを作成する。
+- コンポーネントは `src/components/` 以下に作成し、PascalCase で命名する。
+- コンポーネントは小さく分割し、TypeScript の interface を用いて型定義する。
+- スタイリングは Tailwind CSS を使用し、shadcn UI のガイドラインに従う。
+
+## Prisma
+- データベースのロジックは `prisma/schema.prisma` と `src/lib/db.ts` で管理する。
+- テーブル名は snake_case、フィールド名は camelCase を使用する。
+- マイグレーションは `npx prisma migrate dev` を実行する。
+
+## Authentication
+- Lucia を利用した認証機能は `src/lib/auth.ts` に実装する。
+- 認証に関するシークレットは `.env` で管理する。
+
+## External API Integrations
+- Google Calendar API 連携は `src/lib/googleCalendar.ts` に実装する。
+- AI API 連携は `src/lib/aiClient.ts` を用い、タスクの自動細分化と所要時間算出に活用する。
+
+## Email Notifications
+- nodemailer を使用し、React Email を活用したメール通知機能を実装する。
+- メール送信ロジックは `src/lib/email.ts` に実装する。
+
+## Next.js Structure
+- **App Router** を使用し、`src/app/` ディレクトリ構造を採用する。
+- 基本はサーバーコンポーネントとして実装し、必要に応じてクライアント側のロジックに `"use client"` を追加する。
+
+## tRPC Routers (必要な場合)
+- ルーターは `src/lib/api/routers` に配置し、`src/lib/api/root.ts` で統合する。
+- Zod によるバリデーションを用い、`publicProcedure` または `protectedProcedure` を使用する。
+
+## TypeScript & Syntax
+- `tsconfig.json` で strict mode を有効にする。
+- `any` 型は使用せず、オプショナルチェイニングや union types を活用する。
+
+## File & Folder Naming
+- Next.js のルートは `src/app/` 内、フォルダ名は kebab-case（例: `src/app/dashboard/page.tsx`）を使用する。
+- 共有の型は `src/lib/types.ts` に配置する。
+- インポートは外部ライブラリ→内部→同階層→スタイルの順に整理する。
+
+## Tailwind Usage
+- Tailwind CSS をモバイルファーストで使用する。
+- ダークモードは `dark:` プリフィックスを使用する。
+- `tailwind.config.js` でブランドトークンなどを拡張する。
+
+## Storybook Integration
+- Storybook のストーリーは `src/stories/` に配置し、各コンポーネント毎に `.stories.tsx` として管理する。
+- 複数のバリエーションやインタラクション（actions）を含める。
+
+## AI Integration & Cursor
+- AI 連携は `src/lib/aiClient.ts` の `generateChatCompletion` を使用する。
+- cursorドリブンのタスクは、`.cursor-template.xml` と `.cursor-tasks.md` の指示に従って実行する。
+
+## Build & Commit
+- 変更後は必ず `npm run build` を実行し、ビルドエラーがないことを確認する。
+- 各変更ごとに `.cursor-updates` に一文の更新概要を記載し、`git add . && git commit -m "..."` でコミットする。

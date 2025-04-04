@@ -1,0 +1,8 @@
+# Cursor Updates
+- Next.js プロジェクトの初期化、TypeScript、Tailwind CSS の設定を完了しました。
+- Prisma のセットアップおよび Neon DB との接続設定、Lucia を用いた認証の初期構成を実施しました。
+- shadcn UI と Storybook の導入を実施し、Storybook 上で基本コンポーネントの動作確認を完了しました。
+- TaskCard コンポーネントの作成と Storybook での確認が完了しました。
+- PC版ダッシュボード（カンバン形式）とスマホ向けタスク操作UIの基本ページ構成を実装しました。
+- Google Calendar 連携、nodemailer を用いたメール通知機能、AI API 連携によるタスク細分化機能の初期実装を開始しました。
+※ 各変更後、必ず `npm run build` を実行し、ビルドエラーがないことを確認してください。
